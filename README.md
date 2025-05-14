@@ -1,29 +1,75 @@
-# ARのWebアプリ作成方法
 
-## 0. はじめに
+# craftARt 越前
 
-### 0-1. 概要
+## craftARt とは？
 
-スマートフォンのみで、ARのWebアプリを作成する方法を以下に説明します。  
-スマホにScaniverseアプリをインストールし、Fork（コピー）したGitHub Pagesに3Dモデル化したデータをアップロード & CSVファイルを更新すれば完成です。
+“craftARt（クラフタート）” は、
 
-### 0-2. 必要なもの
+- **craft**（伝統・手仕事・創造性）
+- **AR**（拡張現実）
+- **art**（芸術・文化）
 
-- スマートフォン（iOSまたはAR対応のAndroid）
-- 3Dモデル化したい対象物
-- GitHubアカウント（GitHub Pages推奨）
-- Scaniverseアプリ（または代替スキャンアプリ）
+の3つを組み合わせた造語です。  
+地域の文化財やものづくりを、AR技術で新しい形に再発信することを目指すWebアプリです。  
+このアプリは[Code for Fukui](https://code4fukui.github.io)の協力で作成しました。
 
-### 0-3. その他
 
-- PC不要、アプリ開発スキル不要  
-- インターネット接続とブラウザがあればOK！
+## craftARt 越前 とは？
 
-### 0-4. 使用ライブラリ
+”craftARt 越前”は、  
+**越前市版のcraftARt**であり、地域文化を拡張現実（AR）として再発信する取り組みです。
+
+## 内容
+
+### アプリ種別
+
+| アプリ名           | 用途                         | 端末 | HTML |
+|--------------------|------------------------------|--------|--------|
+| **craftARt Lite**  | ヘッドセット向け軽量ビューア | ヘッドセット | `/index.html` |
+| **craftARt Event** | イベント向けAR体験    | スマホ | `/event.html` |
+| **craftARt Go**    | 簡易型ARビューア | スマホ | `/go.html` |
+
+### 導入キット
+
+地域や団体で craftARt を活用いただくための導入キットはこちら：
+
+- **[craftARt-kit](https://github.com/echizencity/craftARt-kit)**  
+  GitHub Pages をベースに、誰でも無料・簡単にAR展示が始められる導入キット（クラフタートキット）です。
+
+### 使用ライブラリ
 
 - [model-viewer](https://modelviewer.dev/)
 - [egxr.js](https://github.com/code4fukui/egxr.js/blob/main/egxr.js) （Code for Fukui）
 - [threeutil.js](https://github.com/code4fukui/vr-lenspark/blob/main/threeutil.js) （Code for Fukui）
+
+### ライセンス
+
+このプロジェクトは **MITライセンス** のもとで公開されています。  
+ご自由に利用・改変・再配布が可能です。
+
+---
+
+## 0. はじめに
+
+### 0-1. このプロジェクトでできること
+
+- スマートフォンだけでAR展示を作成・公開できる
+- GitHub Pages を使ってWebで公開
+- スキャン → 軽量化 → 公開 の3ステップで完了
+- PCやアプリ開発の知識は不要！
+
+### 0-2. 必要なもの
+
+- スマートフォン（iOS または AR対応 Android）
+- Scaniverse アプリ（または代替スキャンアプリ）
+- GitHub アカウント
+- 3D化したい対象物（文化財、地域資源、作品など）
+
+### 0-3. 特徴
+
+- PC不要：スマホだけで完結  
+- スキル不要：誰でも3DコンテンツをAR化
+- 導入例：文化・観光・教育などにすぐ使える  
 
 ---
 
@@ -38,10 +84,10 @@
 
 ### 1-3. 制作キットを自分のリポジトリにコピー
 
-- 「arkit」のGitHubリポジトリを開く  
-  https://www.github.com/echizencity/arkit
+- 「craftARt-kit」のGitHubリポジトリを開く  
+  https://www.github.com/echizencity/craftARt-kit
 - [Fork]を選択
-- 「Repository name」を変更: `arkit` → `reponame`
+- 「Repository name」を変更: `craftARt-kit` → `reponame`
 - [Create fork]で自分のアカウント下に作業用リポジトリを作成
 
 ### 1-4. GitHub Pages を有効化
@@ -72,7 +118,7 @@
 - [ファイルに保存]を選択  
   ファイル名を以下の形式で変更（日本語・スペースNG）
 
-例：`hajiki01_model.glb`,`sueki03_model.glb`
+例：`hajiki01.glb`,`sueki03.glb`
 
 ---
 
@@ -111,8 +157,8 @@
 
 |path|name|
 |----|----|
-|`./models/hajiki01_model.glb`|土師器|
-|`./models/sueki03_model.glb`|須恵器|
+|`./models/hajiki01.glb`|土師器|
+|`./models/sueki03.glb`|須恵器|
 
 - 半角カンマ区切り
 - 1行目は `path,name` のままでOK
@@ -128,9 +174,9 @@
 
 |名称|端末|URL|
 |----|----|----|
-|AR Event|スマホ|`https://username.github.io/reponame/event.html`|
-|AR Go|スマホ|`https://username.github.io/reponame/go.html`|
-|AR Lite|ヘッドセット|`https://username.github.io/reponame/`|
+|craftARt Event|スマホ|`https://username.github.io/reponame/event.html`|
+|craftARt Go|スマホ|`https://username.github.io/reponame/go.html`|
+|craftARt Lite|ヘッドセット|`https://username.github.io/reponame/`|
 
 ### 5-2. 動作確認（スマホ）
 
@@ -179,9 +225,31 @@
 - `index.html` の13行目がGLBファイルの場所、14行目がAPPの場所を指定している
 
 `<!--     GLB: <a href="https://github.com/echizencity/opendata/tree/main/kokufuhakkutsu/">越前国府発掘プロジェクト</a><br> -->`  
-`<!--     APP: <a href="https://github.com/echizencity/arkit/tree/main/">src on GitHub</a><br> -->`
+`<!--     APP: <a href="https://github.com/echizencity/craftARt-kit/tree/main/">src on GitHub</a><br> -->`
 
 ↓コメントアウトを解除して、URL等を修正する
 
 `GLB: <a href="https://github.com/username/reponame/tree/main/models/">〜〜〜〜</a><br>`  
 `APP: <a href="https://github.com/username/reponame/tree/main/">src on GitHub</a><br>`
+
+
+---
+
+## まとめ
+
+### 基本ステップ一覧
+
+| ステップ | 操作内容                         | 使用アプリ／サービス                 | 備考                                       |
+|----------|----------------------------------|--------------------------------------|--------------------------------------------|
+| 1        | GitHub リポジトリを準備（初回のみ）  | GitHub                               | 最初に一度だけ必要                          |
+| 2        | 3Dモデルを作成                     | Scaniverse（または類似のスキャンアプリ） | 新しいモデルを作るたびに実施                |
+| 3        | gltfbeautyで軽量化                | gltfbeauty（Code for Fukui）         | `.glb` 形式に圧縮・最適化                   |
+| 4        | GitHubにアップロード              | GitHub モバイルサイト                 | `models/` フォルダと `models.csv` を更新     |
+| 5        | 公開と動作確認                    | スマホブラウザ                        | 公開URLで表示・動作チェック                |
+| 6        | QRコード作成と印刷                | QRコードメーカー（jig.jp）            | URLが変わらない限り、再作成は不要          |
+
+---
+
+### 新しいモデルを追加・差し替えたいときは：
+
+**ステップ 2 → 3 → 4 → 5** を繰り返すだけでOKです！
