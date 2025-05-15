@@ -1,4 +1,4 @@
-
+![image](https://github.com/user-attachments/assets/b8f629ad-8208-49d0-b9ef-179dfca02480)
 # craftARt 越前
 
 ## craftARt とは？
@@ -155,13 +155,14 @@
 
 以下のように入力する：
 
-|path|name|
-|----|----|
-|`./models/hajiki01.glb`|土師器|
-|`./models/sueki03.glb`|須恵器|
+|path|name|description|url|
+|----|----|----|----|
+|`./models/hajiki01.glb`|土師器|（任意）|（任意）|
+|`./models/sueki03.glb`|須恵器|（任意）|（任意）|
 
 - 半角カンマ区切り
 - 1行目は `path,name` のままでOK
+- 2行目以降の `description,url` を入力しない場合も、名称の後ろの“,,”は消さない
 - 編集後、[Commit changes] → [Commit changes]で保存
 
 ---
@@ -215,8 +216,8 @@
 #### 1. 固有名称に変更
 
 - `index.html`: 5行目, 11行目  
-- `event.html`: 5行目, 166行目  
-- `go.html`: 5行目, 93行目
+- `event.html`: 5行目, 191行目  
+- `go.html`: 5行目, 133行目
 
 ※5行目はWebページのタイトル、他の行は表示されるタイトル
 
