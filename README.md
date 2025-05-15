@@ -1,4 +1,3 @@
-![image](https://github.com/user-attachments/assets/b8f629ad-8208-49d0-b9ef-179dfca02480)
 # craftARt 越前
 
 ## craftARt とは？
