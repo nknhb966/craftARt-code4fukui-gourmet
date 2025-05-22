@@ -2,7 +2,7 @@
 
 ## craftARt とは？
 
-“craftARt（クラフタート）” は、
+“craftARt” は、
 
 - **craft**（伝統・手仕事・創造性）
 - **AR**（拡張現実）
@@ -33,7 +33,7 @@
 地域や団体で craftARt を活用いただくための導入キットはこちら：
 
 - **[craftARt-kit](https://github.com/echizencity/craftARt-kit)**  
-  GitHub Pages をベースに、誰でも無料・簡単にAR展示が始められる導入キット（クラフタートキット）です。
+  GitHub Pages をベースに、誰でも無料・簡単にAR展示が始められる導入キットです。
 
 ### 使用ライブラリ
 
