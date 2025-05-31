@@ -31,6 +31,16 @@
   import { THREE, scene, camera, renderer, ctrls } from "https://code4fukui.github.io/egxr.js/egxr.js";
   import { initXR, waitLoadGLTF, createModelImage, createModelText, isVisionPro } from "https://code4fukui.github.io/vr-lenspark/threeutil.js";
 
+  async function isXRDeviceAvailable() {
+    if (!navigator.xr) return false;
+    const isSupported = await navigator.xr.isSessionSupported('immersive-vr');
+    return isSupported;
+  }
+
+  if (!await isXRDeviceAvailable()) {
+    location.href = "./go.html";
+  }
+
   // ◎2. 定数 / グローバル状態
   // 定数
   const csvURL = "./models.csv";
