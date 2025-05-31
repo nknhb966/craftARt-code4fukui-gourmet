@@ -29,7 +29,7 @@
 | **craftARt Event** | イベント向けAR体験    | スマホ | `/event.html` |
 | **craftARt Go**    | 簡易型ARビューア | スマホ | `/go.html` |
 
-※`index.html`でXR対応デバイスであれば`headset.html`へ、なければ`go.html`へ分岐しています
+※`index.html`でXR対応デバイスであれば`headset.html`へ、XR対応デバイスでなければ`go.html`へ分岐しています
 
 ### 導入キット
 
@@ -199,10 +199,10 @@
 ### 6-1. QRコード作成ページへ
 
 - おすすめツール：QRコード作成（jig.jp）  
-  `https://fukuno.jig.jp/app/util/qrmaker/` 
+  https://fukuno.jig.jp/app/util/qrmaker/
 
 - 作成対象URL：  
-  （Event）`https://username.github.io/reponame/event.html`
+  （Event）`https://username.github.io/reponame/event.html`  
   （Go）`https://username.github.io/reponame/`
 
   ※`index.html`でXR対応デバイスでなければ`go.html`へ分岐しています
