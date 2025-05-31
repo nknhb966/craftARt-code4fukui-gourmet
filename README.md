@@ -1,10 +1,6 @@
 # XR福井グルメ by craftARt
 
-- craftARtを使ったXR福井グルメ
-    - for [ヘッドセット](https://code4fukui.github.io/craftARt-fukui-gourmet/)
-    - for [スマホ](https://code4fukui.github.io/craftARt-fukui-gourmet/event.html)
-    - for [イベント（スマホ）](https://code4fukui.github.io/craftARt-fukui-gourmet/go.html)
-
+- [craftARtを使ったXR福井グルメ](https://code4fukui.github.io/craftARt-fukui-gourmet/)
 
 ## craftARt とは？
 
