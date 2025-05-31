@@ -1,0 +1,13 @@
+<script type="module">
+async function isXRDeviceAvailable() {
+  if (!navigator.xr) return false;
+  const isSupported = await navigator.xr.isSessionSupported("immersive-vr");
+  return isSupported;
+}
+
+if (!await isXRDeviceAvailable()) {
+  location.href = "./go.html";
+} else {
+  location.href = "./headset.html";
+}
+</script>
