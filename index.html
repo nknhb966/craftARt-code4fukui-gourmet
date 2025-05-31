@@ -16,6 +16,16 @@
     <select id="modelSelect"></select>
   </header>
 
+  <!-- importmap for three.js -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://code4fukui.github.io/three.js/build/three.module.js",
+      "three/addons/": "https://code4fukui.github.io/three.js/examples/jsm/"
+    }
+  }
+  </script>
+
   <script type="module">
   // ◎1. import + Three.js 初期化
   import { THREE, scene, camera, renderer, ctrls } from "https://code4fukui.github.io/egxr.js/egxr.js";
