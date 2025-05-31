@@ -1,5 +1,7 @@
 # craftARt 越前
 
+- [craftARt-kit](https://echizencity.github.io/craftARt-kit/)
+
 ## craftARt とは？
 
 “craftARt” は、
@@ -12,7 +14,6 @@
 地域の文化財やものづくりを、AR技術で新しい形に再発信することを目指すWebアプリです。  
 このアプリは[Code for Fukui](https://code4fukui.github.io)の協力で作成しました。
 
-
 ## craftARt 越前 とは？
 
 ”craftARt 越前”は、  
@@ -24,9 +25,11 @@
 
 | アプリ名           | 用途                         | 端末 | HTML |
 |--------------------|------------------------------|--------|--------|
-| **craftARt Lite**  | ヘッドセット向け軽量ビューア | ヘッドセット | `/index.html` |
+| **craftARt Lite**  | ヘッドセット向け軽量ビューア | ヘッドセット | `/headset.html` |
 | **craftARt Event** | イベント向けAR体験    | スマホ | `/event.html` |
 | **craftARt Go**    | 簡易型ARビューア | スマホ | `/go.html` |
+
+※`index.html`でXR対応デバイスであれば`headset.html`へ、なければ`go.html`へ分岐しています
 
 ### 導入キット
 
@@ -176,7 +179,7 @@
 |----|----|----|
 |craftARt Event|スマホ|`https://username.github.io/reponame/event.html`|
 |craftARt Go|スマホ|`https://username.github.io/reponame/go.html`|
-|craftARt Lite|ヘッドセット|`https://username.github.io/reponame/`|
+|craftARt Lite|ヘッドセット|`https://username.github.io/reponame/headset.html`|
 
 ### 5-2. 動作確認（スマホ）
 
@@ -196,11 +199,13 @@
 ### 6-1. QRコード作成ページへ
 
 - おすすめツール：QRコード作成（jig.jp）  
-  https://fukuno.jig.jp/app/util/qrmaker/  
+  `https://fukuno.jig.jp/app/util/qrmaker/` 
 
 - 作成対象URL：  
-  （Event）`https://username.github.io/reponame/event.html`  
-  （Go）`https://username.github.io/reponame/go.html`
+  （Event）`https://username.github.io/reponame/event.html`
+  （Go）`https://username.github.io/reponame/`
+
+  ※`index.html`でXR対応デバイスでなければ`go.html`へ分岐しています
 
 ### 6-2. QRコードを印刷・配布
 
@@ -214,7 +219,7 @@
 
 #### 1. 固有名称に変更
 
-- `index.html`: 5行目, 11行目  
+- `headset.html`: 5行目, 11行目  
 - `event.html`: 5行目, 194行目  
 - `go.html`: 5行目, 135行目
 
@@ -222,7 +227,7 @@
 
 #### 2. GLBやAPPを指定
 
-- `index.html` の13行目がGLBファイルの場所、14行目がAPPの場所を指定している
+- `headset.html` の13行目がGLBファイルの場所、14行目がAPPの場所を指定している
 
 `<!--     GLB: <a href="https://github.com/echizencity/opendata/tree/main/kokufuhakkutsu/">越前国府発掘プロジェクト</a><br> -->`  
 `<!--     APP: <a href="https://github.com/echizencity/craftARt-kit/tree/main/">src on GitHub</a><br> -->`
