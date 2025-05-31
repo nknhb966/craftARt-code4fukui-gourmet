@@ -16,6 +16,16 @@
     <select id="modelSelect"></select>
   </header>
 
+  <!-- importmap for three.js -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://code4fukui.github.io/three.js/build/three.module.js",
+      "three/addons/": "https://code4fukui.github.io/three.js/examples/jsm/"
+    }
+  }
+  </script>
+
   <script type="module">
   // ◎1. import + Three.js 初期化
   import { THREE, scene, camera, renderer, ctrls } from "https://code4fukui.github.io/egxr.js/egxr.js";
@@ -459,6 +469,17 @@
     animToggleBtn.position.set(-0.4, -0.2, -0.2);
     animToggleBtn.userData.toggleAnimation = true;
     menu.add(animToggleBtn);
+
+    const resetBtn = createLabelButton("リセット", "#333333", "#ffffff");
+    if (resetBtn.material) {
+      if (resetBtn.material.map) resetBtn.material.map.dispose();
+      resetBtn.material.dispose();
+    }
+    if (resetBtn.geometry) resetBtn.geometry.dispose();
+    menu.remove(resetBtn);
+    resetBtn.position.set(-0.4, -0.0, -0.2);
+    resetBtn.userData.reset = true;
+    menu.add(resetBtn);
   };
 
   loadMenuFromCSV();
@@ -470,21 +491,31 @@
     for (const child of menu.children) {
       const worldPos = child.getWorldPosition(new THREE.Vector3());
       if (ctrl.position.distanceTo(worldPos) < 0.08) {
-        if (child.userData.toggleInfo) {
-          showInfo = !showInfo;
-          updateInfoVisibility();
-          updateToggleButtonAppearance(child);
-          return;
-        }
-        if (child.userData.toggleAnimation) {
-          isAnimationEnabled = !isAnimationEnabled;
-          updateAnimationToggleButtonAppearance(child);
-          return;
-        }
-        if (currentModel?.userData?.path === child.userData.path) return;
-        loadModel(child.userData.path, child.userData.name);
+        handleButton(child);
       }
     }
+  };
+  const handleButton = (child) => {
+    if (child.userData.toggleInfo) {
+      showInfo = !showInfo;
+      updateInfoVisibility();
+      updateToggleButtonAppearance(child);
+      return;
+    }
+    if (child.userData.toggleAnimation) {
+      isAnimationEnabled = !isAnimationEnabled;
+      updateAnimationToggleButtonAppearance(child);
+      return;
+    }
+    if (child.userData.reset) {
+      //targetPosition.set(0, 0, 0);
+      targetScale.set(1, 1, 1);
+      targetQuaternion.identity();
+      return;
+    }
+    if (currentModel?.userData?.path === child.userData.path) return;
+    loadModel(child.userData.path, child.userData.name);
+
   };
 
 
@@ -513,7 +544,7 @@
     const intersects = raycaster.intersectObjects(menu.children);
     if (intersects.length > 0) {
       const clicked = intersects[0].object;
-      loadModel(clicked.userData.path, clicked.userData.name);
+      handleButton(clicked);
     }
   }
 
