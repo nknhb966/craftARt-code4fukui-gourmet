@@ -1,6 +1,4 @@
-# XR福井グルメ by craftARt
-
-- [craftARtを使ったXR福井グルメ](https://code4fukui.github.io/craftARt-fukui-gourmet/)
+# craftARt 越前
 
 ## craftARt とは？
 
